@@ -54,6 +54,7 @@
 						(setq p_list (cdr sub_list))
 						(setq pt_list (strcat ",\"[" (rtos (car p_list) 2 4) "," (rtos (cadr p_list) 2 4) "]\""))
 						(write-line (strcat pt_last pt_list "," (rtos (distance p_last p_list) 2 2) "," (rtos (* 1000 w0) 2 0) "," plc) ofs)
+						(setq p_last p_list)
 						(setq pt_last (strcat handle "," (itoa pnum) pt_list))
 					))
 					(setq pnum (+ pnum 1))
